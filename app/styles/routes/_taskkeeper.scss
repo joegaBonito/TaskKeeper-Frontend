@@ -1,0 +1,11 @@
+.app__taskkeeper{
+  &__table {
+    td, th {
+      padding-right:20px;
+    }
+    margin-bottom: 10px;
+  }
+  &__createButton{
+    float:right;
+  }
+}

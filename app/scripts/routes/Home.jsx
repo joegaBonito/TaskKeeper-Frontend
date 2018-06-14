@@ -27,9 +27,9 @@ export class Home extends React.PureComponent {
       <div key="Home" className="app__home app__route">
         <div className="app__container">
           <div className="app__home__wrapper">
-            <div className="app__home__header">
+            {/*}<div className="app__home__header">
               <Logo />
-            </div>
+            </div>*/}
             <h1>{config.description}</h1>
             <a
               href="#login"

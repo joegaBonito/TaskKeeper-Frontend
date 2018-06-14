@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-const RoutePublic = ({ component: Component, isAuthenticated, to, ...rest }) => (
+const RoutePublic = ({ component: Component, isAuthenticated, to, taskkeeper, ...rest }) => (
   <Route
     {...rest}
     render={props => (
@@ -16,11 +16,11 @@ const RoutePublic = ({ component: Component, isAuthenticated, to, ...rest }) => 
 RoutePublic.propTypes = {
   component: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  to: PropTypes.string,
+  to: PropTypes.string
 };
 
 RoutePublic.defaultProps = {
-  to: '/private',
+  to: '/taskkeeper'
 };
 
 export default RoutePublic;

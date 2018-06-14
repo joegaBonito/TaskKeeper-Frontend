@@ -14,11 +14,13 @@ import { showAlert } from 'actions';
 
 import Home from 'routes/Home';
 import Private from 'routes/Private';
+import Taskkeeper from 'routes/Taskkeeper';
 import NotFound from 'routes/NotFound';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import SystemAlerts from 'components/SystemAlerts';
+
 
 export class App extends React.Component {
   static propTypes = {
@@ -60,6 +62,7 @@ export class App extends React.Component {
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
+              <RoutePrivate isAuthenticated={user.isAuthenticated} path="/taskkeeper" component={Taskkeeper} />
               <Route component={NotFound} />
             </Switch>
           </main>
