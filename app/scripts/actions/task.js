@@ -16,3 +16,15 @@ export function getTasks(): Object {
     payload: {},
   };
 }
+
+/**
+ * Create a task
+ *
+ * @returns {Object}
+ */
+export function createTask(payload): Object {
+  return {
+    type: ActionTypes.CREATE_TASK,
+    payload: payload,
+  };
+}

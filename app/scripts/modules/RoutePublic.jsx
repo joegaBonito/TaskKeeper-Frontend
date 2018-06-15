@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-const RoutePublic = ({ component: Component, isAuthenticated, to, taskkeeper, ...rest }) => (
+const RoutePublic = ({ component: Component, isAuthenticated, to, ...rest }) => (
   <Route
     {...rest}
     render={props => (

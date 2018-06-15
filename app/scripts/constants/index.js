@@ -24,6 +24,18 @@ export const ActionTypes = keyMirror({
   GET_TASKS:undefined,
   GET_TASKS_SUCCESS:undefined,
   GET_TASKS_FAILURE:undefined,
+  CREATE_TASK:undefined,
+  CREATE_TASK_SUCCESS:undefined,
+  CREATE_TASK_FAILURE:undefined,
+  EDIT_TASK:undefined,
+  EDIT_TASK_SUCCESS:undefined,
+  EDIT_TASK_FAILURE:undefined,
+  DELETE_TASK:undefined,
+  DELETE_TASK_SUCCESS:undefined,
+  DELETE_TASK_FAILURE:undefined,
+  VIEW_TASK:undefined,
+  VIEW_TASK_SUCCESS:undefined,
+  VIEW_TASK_FAILURE:undefined,
 });
 
 /**

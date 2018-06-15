@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 import config from 'config';
 
-import Logo from 'components/Logo';
+//import Logo from 'components/Logo';
 import { login } from 'actions/index';
 
 export class Home extends React.PureComponent {

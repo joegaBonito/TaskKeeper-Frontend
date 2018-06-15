@@ -16,6 +16,7 @@ import Home from 'routes/Home';
 import Private from 'routes/Private';
 import Taskkeeper from 'routes/Taskkeeper';
 import NotFound from 'routes/NotFound';
+import TaskCreateForm from 'routes/TaskCreateForm';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -63,6 +64,7 @@ export class App extends React.Component {
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/taskkeeper" component={Taskkeeper} />
+              <RoutePrivate isAuthenticated={user.isAuthenticated} path="/taskcreateform" component={TaskCreateForm} />
               <Route component={NotFound} />
             </Switch>
           </main>

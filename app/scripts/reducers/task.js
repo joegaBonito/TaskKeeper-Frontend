@@ -11,7 +11,7 @@ export const taskState = {
 
 export default {
   task: createReducer(taskState, {
-    [ActionTypes.GET_TASKS_SUCCESS](state, {payload}) {
+    [ActionTypes.GET_TASKS_SUCCESS](state, { payload }) {
       return immutable(state, {
         tasks: { $set: payload.data || []  },
       });
