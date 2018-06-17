@@ -29,12 +29,18 @@ function TableBody(props) {
 }
 
 
+
 export class Taskkeeper extends React.PureComponent {
 
   componentWillMount() {
       this.props.dispatch(getTasks());
 
   }
+
+  createTask = (e) => {
+    e.preventDefault();
+    this.props.history.push('/taskcreateform');
+  }  
 
   render() {
     // const task1 = new Task(1,'title1','05/13/2018','Joe Jung','06/13/2018');
@@ -57,7 +63,7 @@ export class Taskkeeper extends React.PureComponent {
               </thead>
               <TableBody tasks={tasks} />
             </Table>
-            <Button className="app__taskkeeper__createButton" color="primary">Create</Button>
+            <Button className="app__taskkeeper__createButton" color="primary" onClick={this.createTask}>Create</Button>
         </div>
       </div>
       </div>

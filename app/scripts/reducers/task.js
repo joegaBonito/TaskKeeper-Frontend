@@ -7,6 +7,7 @@ export const taskState = {
   task: '',
   tasks: [],
   status: 'idle',
+  taskcreateform: false
 };
 
 export default {
@@ -14,6 +15,11 @@ export default {
     [ActionTypes.GET_TASKS_SUCCESS](state, { payload }) {
       return immutable(state, {
         tasks: { $set: payload.data || []  },
+      });
+    },
+    [ActionTypes.CREATE_TASK_SUCCESS](state, { payload }) {
+      return immutable(state, {
+        taskcreateform: { $set: payload.data  },
       });
     },
   }),

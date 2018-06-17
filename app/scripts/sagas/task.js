@@ -56,16 +56,11 @@ export function* createTask({ payload }) {
         //   'date_modified':payload.date_modified
         // )
       })
-      .then((res) => {
-        console.log("this is res", res)
-       }).catch((err) => {
-        console.log(err)
-       })
     }
     const response = yield call(createTaskfunc,`http://localhost:8088/api/taskkeeping-create`);
     yield put({
       type: ActionTypes.CREATE_TASK_SUCCESS,
-      payload: { data: response },
+      payload: {data: true},
     });
   }
   catch (err) {
