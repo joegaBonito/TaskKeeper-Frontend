@@ -4,37 +4,16 @@ import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import { getTasks } from 'actions/index';
 import Task from 'models/Task';
+import TasksTableBody from 'components/TasksTableBody';
 
-function TableBody(props) {
-  const tasks = props.tasks;
-  const tdItems = tasks.map((task,i)=>{
-      return([
-        <th key="i+id" scope="row">{task.id}</th>,
-        <td key="i+title">{task.title}</td>,
-        <td key="i+owner">{task.owner}</td>,
-        <td key="i+date_created">{task.date_created}</td>,
-        <td key="i+date_modified">{task.date_modified}</td>,
-        ]
-      );
-    }
-  );
-  const trItems = tdItems.map((tdItem,i)=>{
-      return <tr key={i}>{tdItem}</tr>
-  });
-  return (
-    <tbody>
-      {trItems}
-    </tbody>
-  );
+var taskView = function(task) {
+  console.log(task.id);
 }
-
-
 
 export class Taskkeeper extends React.PureComponent {
 
   componentWillMount() {
       this.props.dispatch(getTasks());
-
   }
 
   createTask = (e) => {
@@ -45,7 +24,7 @@ export class Taskkeeper extends React.PureComponent {
   render() {
     // const task1 = new Task(1,'title1','05/13/2018','Joe Jung','06/13/2018');
     // const task2 = new Task(2,'title2','05/13/2018','Hailey Seo','06/13/2018');
-    const tasks = this.props.task.tasks;
+    const {tasks} = this.props.task;
     return (
       <div key="taskkeeper" className="app__taskkeeper app__route">
         <div className="app__container">
@@ -61,7 +40,7 @@ export class Taskkeeper extends React.PureComponent {
                   <th>Date Modified</th>
                 </tr>
               </thead>
-              <TableBody tasks={tasks} />
+              <TasksTableBody tasks={tasks} />
             </Table>
             <Button className="app__taskkeeper__createButton" color="primary" onClick={this.createTask}>Create</Button>
         </div>

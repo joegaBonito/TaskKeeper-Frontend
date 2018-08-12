@@ -16,7 +16,7 @@ import { ActionTypes } from 'constants/index';
  */
 export function* getTasks({ payload }) {
   try {
-    const response = yield call(request,`http://localhost:8088/api/taskkeeping-list`);
+    const response = yield call(request,`http://localhost:8180/api/taskkeeping-list`);
     yield put({
       type: ActionTypes.GET_TASKS_SUCCESS,
       payload: { data: response },
@@ -40,7 +40,7 @@ export function* getTasks({ payload }) {
 export function* createTask({ payload }) {
   try {
     var createTaskfunc = function() {
-      return fetch(`http://localhost:8088/api/taskkeeping-create`,{
+      return fetch(`http://localhost:8180/api/taskkeeping-create`,{
         method: 'POST',
         headers: {
           Accept:'application/json',
@@ -57,7 +57,7 @@ export function* createTask({ payload }) {
         // )
       })
     }
-    const response = yield call(createTaskfunc,`http://localhost:8088/api/taskkeeping-create`);
+    const response = yield call(createTaskfunc,`http://localhost:8180/api/taskkeeping-create`);
     yield put({
       type: ActionTypes.CREATE_TASK_SUCCESS,
       payload: {data: true},
